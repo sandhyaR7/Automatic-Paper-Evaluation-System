@@ -1,2 +1,2 @@
-# Automatic-Paper-Evaluation-System
+# Automated-Paper-Evaluation-System
 Automated Evaluation and Grading
