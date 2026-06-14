@@ -1,2 +1,2 @@
 # Automated-Paper-Evaluation-System
-Automated Evaluation and Grading
+AI-Based Evaluation and Grading
