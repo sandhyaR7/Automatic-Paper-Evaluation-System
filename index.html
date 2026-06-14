@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AutoPaperEval – Staff Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- REGISTER PAGE (DEFAULT) -->
+  <section id="page-register" class="page active">
+    <div class="auth-container">
+      <h1>AutoPaperEval</h1>
+      <h2>Create Staff Account</h2>
+      <form id="form-register" class="auth-form">
+        <label>Full Name
+          <input type="text" id="reg-name" required />
+        </label>
+        <label>Email
+          <input type="email" id="reg-email" required />
+        </label>
+        <label>Password
+          <input type="password" id="reg-password" required />
+        </label>
+        <label>Confirm Password
+          <input type="password" id="reg-password2" required />
+        </label>
+        <button type="submit" class="btn-primary auth-btn">Register</button>
+      </form>
+      <p class="switch">Already have an account? <button id="goto-login">Login</button></p>
+    </div>
+  </section>
+
+  <!-- LOGIN PAGE -->
+  <section id="page-login" class="page">
+    <div class="auth-container">
+      <h1>AutoPaperEval</h1>
+      <h2>Staff Login</h2>
+      <form id="form-login" class="auth-form">
+        <label>Email
+          <input type="email" id="login-email" required />
+        </label>
+        <label>Password
+          <input type="password" id="login-password" required />
+        </label>
+        <button type="submit" class="btn-primary auth-btn">Login</button>
+      </form>
+      <p class="switch">Don't have an account? <button id="goto-register">Register</button></p>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="page-dashboard" class="page">
+    <header class="topbar">
+      <h2>AutoPaperEval – Dashboard</h2>
+      <nav>
+        <button id="nav-evaluations">Evaluations</button>
+        <button id="nav-settings">Settings</button>
+        <button id="logout" class="danger">Logout</button>
+      </nav>
+    </header>
+
+    <main class="dashboard-body">
+      <div class="card-grid">
+        <div class="card">
+          <h3>Total Evaluations</h3>
+          <p id="total-evals">0</p>
+        </div>
+        <div class="card">
+          <h3>Pending Sheets</h3>
+          <p id="pending-sheets">0</p>
+        </div>
+        <div class="card">
+          <h3>Average Score</h3>
+          <p id="avg-score">–</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Upload Question Paper & Key</h3>
+        <form id="form-qp-key" class="upload-form">
+          <label>Question Paper (PDF/Image)
+            <input type="file" id="qp-file" accept="application/pdf,image/*" required />
+          </label>
+          <label>Key File (CSV/JSON/TXT)
+            <input type="file" id="key-file" required />
+          </label>
+          <label>Key Format
+            <select id="key-format">
+              <option value="omr-csv">OMR CSV</option>
+              <option value="mcq-json">MCQ JSON</option>
+              <option value="custom-txt">Custom Text</option>
+            </select>
+          </label>
+          <button class="btn-primary">Save & Continue</button>
+        </form>
+      </div>
+
+      <div class="panel" id="answer-upload-panel">
+        <h3>Upload Student Answer Sheets</h3>
+        <form id="form-answers" class="upload-form">
+          <label>Upload Mode
+            <select id="upload-mode">
+              <option value="single">Single</option>
+              <option value="bulk">Bulk ZIP</option>
+            </select>
+          </label>
+          <label>Select File(s)
+            <input type="file" id="answer-files" accept="application/pdf,image/*" multiple />
+          </label>
+          <button class="btn-primary">Upload & Evaluate</button>
+        </form>
+      </div>
+
+      <div class="panel" id="results-panel">
+        <h3>Results</h3>
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Score</th>
+              <th>Correct</th>
+              <th>Wrong</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

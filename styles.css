@@ -1,0 +1,123 @@
+/* AutoPaperEval - Professional Responsive CSS */
+:root{
+  --bg:#0d0f1a;
+  --bg-alt:#151827;
+  --panel:#1b1f30;
+  --card:#1e2235;
+  --accent:#4f7cff;
+  --accent2:#6f9dff;
+  --text:#e8ecf7;
+  --text-dim:#a8b0c3;
+  --danger:#ff4f6b;
+  --radius:14px;
+  --shadow:0 10px 25px rgba(0,0,0,0.35);
+  --transition:0.25s ease;
+}
+
+*{box-sizing:border-box; margin:0; padding:0; font-family:"Inter",sans-serif;}
+body{background:var(--bg); color:var(--text); min-height:100vh;}
+
+/* PAGE CONTROL */
+.page{display:none; width:100%; min-height:100vh; padding:20px;}
+.page.active{display:flex; justify-content:center; align-items:center;}
+
+/* AUTH PAGES */
+.auth-container{
+  width:100%; max-width:420px; padding:35px;
+  background:var(--panel); border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  text-align:center;
+  animation:fadeIn .4s ease;
+}
+.auth-container h1{font-size:1.9rem; font-weight:700; margin-bottom:6px; color:var(--accent2);}
+.auth-container h2{font-size:1.2rem; font-weight:500; margin-bottom:22px; color:var(--text-dim);}
+
+.auth-form{display:flex; flex-direction:column; gap:15px;}
+.auth-form label{font-size:.9rem; text-align:left; color:var(--text-dim);}
+.auth-form input{
+  margin-top:6px; padding:12px;
+  background:#0f1220; border:1px solid #23283d;
+  border-radius:10px; color:var(--text);
+  transition:var(--transition);
+}
+.auth-form input:focus{border-color:var(--accent); outline:none;}
+
+.auth-btn{margin-top:5px;}
+.switch{margin-top:18px; font-size:.9rem; color:var(--text-dim);} 
+.switch button{background:none; border:none; color:var(--accent2); cursor:pointer; font-size:.9rem;}
+
+/* BUTTONS */
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  padding:12px 15px; border-radius:10px; border:none;
+  color:white; font-size:1rem; cursor:pointer; font-weight:600;
+  transition:var(--transition);
+}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 18px rgba(79,124,255,0.4);} 
+
+.danger{background:none; border:1px solid var(--danger); padding:8px 14px; color:var(--danger); border-radius:10px;}
+.danger:hover{background:var(--danger); color:white;}
+
+/* DASHBOARD */
+#page-dashboard{flex-direction:column; padding:0;}
+
+.topbar{
+  width:100%; padding:18px 25px;
+  background:var(--panel); display:flex;
+  align-items:center; justify-content:space-between;
+  box-shadow:var(--shadow);
+}
+.topbar h2{font-size:1.3rem; color:var(--accent2);} 
+.topbar nav button{
+  background:none; border:1px solid #2a3046; padding:8px 14px;
+  color:var(--text-dim); border-radius:10px; margin-left:10px; cursor:pointer;
+  transition:var(--transition);
+}
+.topbar nav button:hover{background:#262c40; color:var(--text);} 
+
+.dashboard-body{padding:25px; max-width:1200px; margin:auto; display:flex; flex-direction:column; gap:25px;}
+
+/* CARDS */
+.card-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px;}
+.card{
+  background:var(--card); padding:22px; border-radius:var(--radius);
+  box-shadow:var(--shadow); text-align:center;
+  transition:var(--transition);
+}
+.card:hover{transform:translateY(-4px);} 
+.card h3{color:var(--text-dim); margin-bottom:10px; font-weight:500;}
+.card p{font-size:1.8rem; font-weight:700; color:var(--accent2);} 
+
+/* PANELS */
+.panel{
+  background:var(--panel); padding:25px; border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.panel h3{margin-bottom:15px; color:var(--accent2);} 
+
+.upload-form{display:grid; gap:18px;}
+.upload-form label{color:var(--text-dim); font-size:.9rem;}
+.upload-form input, .upload-form select{
+  margin-top:6px; padding:12px;
+  background:#0c1020; border:1px solid #24293d; border-radius:10px;
+  color:var(--text); transition:var(--transition);
+}
+.upload-form input:focus, .upload-form select:focus{border-color:var(--accent);} 
+
+/* RESULTS TABLE */
+#results-table{width:100%; border-collapse:collapse; margin-top:10px;}
+#results-table th{
+  text-align:left; padding:12px; color:var(--text-dim); background:#121624;
+}
+#results-table td{
+  padding:12px; border-bottom:1px solid #262b40;
+}
+
+/* MOBILE */
+@media(max-width:720px){
+  .dashboard-body{padding:15px;}
+  .topbar{flex-direction:column; gap:12px; text-align:center;}
+  .topbar nav button{margin-left:0;}
+}
+
+@keyframes fadeIn{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;}}
